@@ -3,36 +3,19 @@
   margin: 0.5rem;
 }
 
-table {
-  width: 70%;
-  border-collapse: collapse;
-  margin-bottom: 1rem;
+.w-100 {
+  width: 100%;
 }
 
-table, th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-th {
-  background-color: #f4f4f4;
-  text-align: left;
-}
-
-pre {
-  margin: 0;
-  color: #f8f8f2;
-}
-
-h2 {
-  margin-top: 1.5rem;
-}
 
 /* ########  DEMO PAGES ########## */
 .page-container {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  justify-content: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  text-align: center;
 }
 
 .example-code-block {
@@ -40,7 +23,6 @@ h2 {
   width: auto;
   display: flex;
   flex-direction: column;
-  width: 70%;
 }
 
 .example-block {
