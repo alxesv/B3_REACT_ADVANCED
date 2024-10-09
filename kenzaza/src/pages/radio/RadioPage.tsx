@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Toggle from '../../components/atoms/toggle/Toggle';
+import Radio from '../../components/atoms/radio/Radio';
 import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism for syntax highlighting
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One Dark theme
@@ -7,15 +7,18 @@ import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One
 const TogglePage: React.FC = () => {
   const [copySuccess, setCopySuccess] = useState('Copy');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTimeout(() => alert("Toggle clicked!"), 400);
-    }
+
 
   const codeString = `
-    <Toggle />
-    <Toggle defaultChecked={true}  color="secondary" onChange={handleChange} />
-    <Toggle defaultChecked={false} color="danger" />
-    <Toggle defaultChecked={true} type="square" color="dark" />
+   <div id="group-1">
+        <Radio label="Option 1" name="group-1" onChange={(e) =>{ setTimeout(() => alert("Option 1 selected!"), 50);}} color="primary" value="option1"/>
+        <Radio label="Option 2" defaultChecked={false} name="group-1" color="secondary" value="option2"/>
+        <Radio label="Option 3" defaultChecked={false} name="group-1" color="primary" value="option3"/>
+    </div>
+    <div id="group-2">
+        <Radio label="Option 1" defaultChecked={false} name="group-2" color="danger" value="option1"/>
+        <Radio label="Option 2" defaultChecked={true} name="group-2" color="dark" value="option2"/>
+    </div>
   `;
 
   const copyToClipboard = () => {
@@ -27,8 +30,8 @@ const TogglePage: React.FC = () => {
 
   return (
       <div className='page-container'>
-          <h1>Toggle Component Documentation</h1>
-          <p>The Toggle component can be used to create a toggle switch input.</p>
+          <h1>Radio Component Documentation</h1>
+          <p>The Radio component can be used to create a radio button input with a label.</p>
           <h2>Props Overview</h2>
           <table>
               <thead>
@@ -42,46 +45,46 @@ const TogglePage: React.FC = () => {
               </thead>
               <tbody>
                   <tr>
-                      <td><code>type</code></td>
+                      <td><code>label</code></td>
                       <td>string</td>
-                      <td>round | square</td>
-                      <td>Defines the shape of the toggle switch.</td>
-                      <td><code>round</code></td>
+                      <td>a string</td>
+                      <td>Defines the text to display next to the radio button.</td>
+                      <td><code>cannot be empty</code></td>
+                  </tr>
+                  <tr>
+                        <td><code>name</code></td>
+                        <td>string</td>
+                        <td>a string</td>
+                        <td>Defines the name attribute of the radio button. Different radio buttons with the same name belong to the same group.</td>
+                        <td><code>cannot be empty</code></td>
                   </tr>
                   <tr>
                         <td><code>color</code></td>
                         <td>string</td>
                         <td>primary | secondary | danger | dark</td>
-                        <td>Defines the color of the toggle switch.</td>
+                        <td>Defines the color of the radio button.</td>
                         <td><code>primary</code></td>
                   </tr>
                   <tr>
                       <td><code>defaultChecked</code></td>
                       <td>boolean</td>
                       <td><code>true</code> or <code>false</code></td>
-                      <td>Defines if the toggle switch is checked by default.</td>
+                      <td>Defines if the radio button is checked by default.</td>
                       <td><code>false</code></td>
                   </tr>
                   <tr>
                       <td><code>onChange</code></td>
                       <td>function</td>
                       <td>Function</td>
-                      <td>Function to call when the toggle switch is clicked.</td>
+                      <td>Function to call when the radio button is clicked.</td>
                       <td><code>undefined</code></td>
                   </tr>
                   <tr>
                       <td><code>value</code></td>
                       <td>string</td>
                       <td>a string</td>
-                      <td>Value attribute of the toggle switch.</td>
-                      <td><code>undefined</code></td>
-                  </tr>
-                  <tr>
-                        <td><code>customClass</code></td>
-                        <td>string</td>
-                        <td>a string</td>
-                        <td>Optional custom CSS class.</td>
-                        <td><code>undefined</code></td>
+                      <td>Value attribute of the radio button.</td>
+                      <td><code>cannot be empty</code></td>
                   </tr>
               </tbody>
           </table>
@@ -89,10 +92,15 @@ const TogglePage: React.FC = () => {
           <h2>Usage Examples</h2>
           <div className='example-code-block'>
               <div className='example-block justify-around'>
-                <Toggle />
-                <Toggle defaultChecked={true}  color="secondary" onChange={handleChange} />
-                <Toggle defaultChecked={false} color="danger" />
-                <Toggle defaultChecked={true} type="square" color="dark" />
+                <div id="group-1">
+                    <Radio label="Option 1" name="group-1" onChange={(e) =>{ setTimeout(() => alert("Option 1 selected!"), 50);}} color="primary" value="option1"/>
+                    <Radio label="Option 2" defaultChecked={false} name="group-1" color="secondary" value="option2"/>
+                    <Radio label="Option 3" defaultChecked={false} name="group-1" color="primary" value="option3"/>
+                </div>
+                <div id="group-2">
+                    <Radio label="Option 1" defaultChecked={false} name="group-2" color="danger" value="option1"/>
+                    <Radio label="Option 2" defaultChecked={true} name="group-2" color="dark" value="option2"/>
+                </div>
               </div>
 
               <div className='example-code'>
