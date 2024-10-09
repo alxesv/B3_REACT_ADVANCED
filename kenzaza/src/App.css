@@ -61,3 +61,7 @@ h2 {
   top: 1rem;
   right: 1rem ;
 }
+
+.justify-around {
+  justify-content: space-around;
+}
