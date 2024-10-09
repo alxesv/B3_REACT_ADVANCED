@@ -3,9 +3,9 @@ import Checkbox from '../../components/atoms/checkbox/Checkbox';
 import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism for syntax highlighting
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One Dark theme
-import Tableau from '../../components/atoms/table/Table';
 import { DataProp } from '../../interface/TableInterface';
 import { columnsProp } from '../../model/ColumnDemo';
+import Table from '../../components/organisms/table/Table';
 
 
 const CheckboxPage: React.FC = () => {
@@ -43,7 +43,7 @@ const DataProp: DataProp[] = [
           <h1>Checkbox Component Documentation</h1>
           <p>The Checkbox component can be used to create a checkbox input with a label.</p>
           <h2>Props Overview</h2>
-            <Tableau
+            <Table
                 columns={columnsProp}
                 data={DataProp}
                 type='secondary'

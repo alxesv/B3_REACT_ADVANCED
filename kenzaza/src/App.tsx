@@ -8,6 +8,7 @@ import RadioPage from './pages/radio/RadioPage';
 import LoaderPage from './pages/loader/LoaderPage';
 import SelectPage from './pages/select/SelectPage';
 import TablePage from './pages/table/TablePage';
+import CardPage from './pages/card/CardPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/radio" element={<RadioPage />} />
           <Route path="/select" element={<SelectPage />} />
           <Route path="/table" element={<TablePage />} />
+          <Route path='/card' element={<CardPage />} />
         </Routes>
       </Router>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Tableau from '../../components/atoms/table/Table';
+import Table from '../../components/organisms/table/Table';
 import { Column, DataDemo, DataProp } from '../../interface/TableInterface';
 import { columnsProp } from '../../model/ColumnDemo';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -16,10 +16,10 @@ const TablePage: React.FC = () => {
 
   const codeString = `
   
-          <Tableau columns={columnsDemo} data={dataDemo} select={true} 
+          <Table columns={columnsDemo} data={dataDemo} select={true} 
             pagination={true} onSelect={handleSelect} pageSize={5} type='primary' onSelectCellules={handleSelectCellules} />
             
-          <Tableau columns={columnsDemo} data={selectedData} type='secondary' />
+          <Table columns={columnsDemo} data={selectedData} type='secondary' />
   `;
 
   const dataDemo: DataDemo[] = [
@@ -41,7 +41,7 @@ const TablePage: React.FC = () => {
 
 
   const dataProp: DataProp[] = [
-    { prop: 'type', options: 'primary | secondary | danger | warning', description: 'Defines the background color of table header', default: 'primary' , type: 'string'},
+    { prop: 'type', options: 'primary | secondary | danger | warning', description: 'Defines the background color of table header', default: 'primary', type: 'string' },
     { prop: 'columns', options: 'ColumnProps<T>[]', description: 'Defines the columns of the table', default: 'cannot be empty', type: 'ColumnProps<T>[]' },
     { prop: 'data', options: 'T[]', description: 'Defines the data of the table', default: 'cannot be empty', type: 'T[]' },
     { prop: 'pageSize', options: 'true or false', description: 'Defines the number of rows per page', default: 'data.length', type: 'number' },
@@ -72,7 +72,7 @@ const TablePage: React.FC = () => {
       <h1>Table Demo Page</h1>
       <p>The Table component can be used to display data in a tabular format.</p>
 
-      <Tableau
+      <Table
         columns={columnsProp}
         data={dataProp}
         type='secondary'
@@ -82,7 +82,7 @@ const TablePage: React.FC = () => {
       <div className='example-code-block'>
         <div className='example-block'>
           <div className='w-100'>
-            <Tableau
+            <Table
               columns={columnsDemo}
               data={dataDemo}
               select={true}
@@ -93,7 +93,7 @@ const TablePage: React.FC = () => {
               onSelectCellules={handleSelectCellules}
             />
 
-            <Tableau columns={columnsDemo} data={selectedData} type='secondary' />
+            <Table columns={columnsDemo} data={selectedData} type='secondary' />
 
             <p>Last selected cellule : {selectedCellule.map((cellule, index) => <span key={index}>{cellule.value} </span>)}</p>
           </div>

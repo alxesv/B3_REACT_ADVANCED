@@ -3,9 +3,9 @@ import Toggle from '../../components/atoms/toggle/Toggle';
 import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism for syntax highlighting
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One Dark theme
-import Tableau from '../../components/atoms/table/Table';
 import { DataProp } from '../../interface/TableInterface';
 import { columnsProp } from '../../model/ColumnDemo';
+import Table from '../../components/organisms/table/Table';
 
 const TogglePage: React.FC = () => {
   const [copySuccess, setCopySuccess] = useState('Copy');
@@ -18,11 +18,6 @@ const TogglePage: React.FC = () => {
     { prop: 'value', options: 'a string', description: 'Value attribute of the toggle switch.', default: 'undefined', type: 'string' },
     { prop: 'customClass', options: 'a string', description: 'Optional custom CSS class.', default: 'undefined', type: 'string' },
     ];
-
-    
-
-
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTimeout(() => alert("Toggle clicked!"), 400);
@@ -48,7 +43,7 @@ const TogglePage: React.FC = () => {
           <p>The Toggle component can be used to create a toggle switch input.</p>
           <h2>Props Overview</h2>
           
-            <Tableau
+            <Table
                 columns={columnsProp}
                 data={DataProp}
                 type='secondary'
