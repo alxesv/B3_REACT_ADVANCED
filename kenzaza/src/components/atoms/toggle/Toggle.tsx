@@ -16,7 +16,7 @@ function Toggle(
   return (
     <label className="toggle">
     <input type="checkbox"  defaultChecked={defaultChecked} onChange={onChange} value={value} />
-    <span className={`slider ${type} ${color}`}></span>
+    <span className={`slider ${type} ${color} ${customClass}`}></span>
     </label>
   );
 }
