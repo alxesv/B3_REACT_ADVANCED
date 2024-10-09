@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+/* ######## GLOBAL CSS ########## */
+.m-2 {
+  margin: 0.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table {
+  width: 70%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table, th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+th {
+  background-color: #f4f4f4;
+  text-align: left;
+}
+
+pre {
+  margin: 0;
+  color: #f8f8f2;
+}
+
+h2 {
+  margin-top: 1.5rem;
+}
+
+/* ########  DEMO PAGES ########## */
+.page-container {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+}
+
+.example-code-block {
+  border: solid 3px #eaeaea;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.example-block {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.example-code {
+  position: relative;
+  overflow-x: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.copy-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem ;
 }
