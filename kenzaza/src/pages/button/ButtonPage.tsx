@@ -3,8 +3,7 @@ import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { DataProp } from '../../interface/TableInterface';
-import Tableau from '../../components/atoms/table/Table';
-import { columnsProp } from '../../model/ColumnDemo';
+import Tableau from '../../components/atoms/table/Table'; import { columnsProp } from '../../model/ColumnDemo';
 
 const ButtonPage: React.FC = () => {
     const [copySuccess, setCopySuccess] = useState('Copy');
@@ -29,7 +28,7 @@ const ButtonPage: React.FC = () => {
         setTimeout(() => setCopySuccess('Copy'), 3000);
     };
 
-    
+
     const data: DataProp[] = [
         { prop: 'type', value: 'primary | secondary | danger | icon', description: 'Defines the style of the button.', default: 'primary' },
         { prop: 'state', value: 'active | disabled | loading', description: 'Defines the state of the button.', default: 'active' },
@@ -38,7 +37,7 @@ const ButtonPage: React.FC = () => {
         { prop: 'onClickCopy', value: '() => void', description: 'Callback when the button is clicked to copy text.', default: 'undefined' },
         { prop: 'textToCopy', value: 'string', description: 'Text to copy to clipboard.', default: 'undefined' },
       ];
-    
+
 
     return (
         <div className='page-container'>
@@ -46,7 +45,7 @@ const ButtonPage: React.FC = () => {
             <p>The Button component can be used to trigger various actions and can be styled in multiple ways.</p>
 
             <h2>Props Overview</h2>
- 
+
             <Tableau
                 columns={columnsProp}
                 data={data}

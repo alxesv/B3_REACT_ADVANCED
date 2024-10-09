@@ -1,0 +1,77 @@
+.spinner {
+  position: relative;
+}
+
+.spinner:before, .spinner:after{
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+}
+
+.spinner:after {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {  transform: rotate(0)}
+  100% { transform: rotate(360deg)}
+}
+
+.spinner.primary::after {
+  box-shadow: 0 2px 0 #fbb7fc;
+}
+
+.spinner.secondary::after {
+  box-shadow: 0 2px 0 #bdbdbd;
+}
+
+.spinner.danger::after {
+  box-shadow: 0 2px 0 #ff0000;
+}
+
+.spinner.warning::after {
+  box-shadow: 0 2px 0 #ffcc00;
+}
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* PROGESS BAR  */
+
+
+.container-progress {
+  margin: 10px auto;
+  width: 600px; /* ok add width container */
+  text-align: center;
+}
+
+
+.progress-bar { /*fond de progress bar */
+  padding: 6px; /* btwn progess bar & container ok */
+  border-radius: 30px; /*ok */
+  background: rgba(0,0,0,0);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25),
+    0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-animation {
+  background-color: rgba(79,67,216,0.56); /* change la couleur du fond en fin d'animation */
+  animation: progressAnimation 5s;
+  border-radius: 30px; /* ok radius */
+
+}
+
+.progress-animation.primary {
+  background-color: #fbb7fc;
+}
+
+.progress-animation.secondary {
+  background-color: #bdbdbd;
+}
+
+.progress-animation.danger {
+  background-color: #ff0000;
+}
+
+.progress-animation.warning {
+  background-color: #ffcc00;
+}
