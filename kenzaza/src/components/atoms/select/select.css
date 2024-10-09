@@ -1,0 +1,28 @@
+.select select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.select label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.select select[multiple] option {
+    padding: 5px;
+}
+
+.select option {
+    width: fit-content;
+}
