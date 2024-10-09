@@ -1,0 +1,20 @@
+.radio label{
+    font-size: 1.1rem;
+    padding-left: 0.3rem;
+}
+
+.radio input.primary{
+    accent-color: #d319d6;
+}
+
+.radio input.secondary{
+    accent-color: #6c757d;
+}
+
+.radio input.danger{
+    accent-color: #dc3545;
+}
+
+.radio input.dark{
+    accent-color: #1b1e22;
+}
