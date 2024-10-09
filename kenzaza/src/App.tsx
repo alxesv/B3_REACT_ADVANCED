@@ -6,6 +6,7 @@ import ButtonPage from './pages/button/ButtonPage';
 import TogglePage from './pages/toggle/TogglePage';
 import RadioPage from './pages/radio/RadioPage';
 import SelectPage from './pages/select/SelectPage';
+import TablePage from './pages/table/TablePage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/toggle" element={<TogglePage />} />
           <Route path="/radio" element={<RadioPage />} />
           <Route path="/select" element={<SelectPage />} />
+          <Route path="/table" element={<TablePage />} />
         </Routes>
       </Router>
     </div>

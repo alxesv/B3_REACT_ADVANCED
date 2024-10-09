@@ -1,0 +1,94 @@
+.table-container {
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+}
+
+th.primary {
+    cursor: pointer;
+    background-color: #d319d6;
+    color: #fff;
+}
+
+th.primary:hover {
+    background-color: #b300b3;
+}
+
+th.secondary {
+    cursor: pointer;
+    background-color: #f4f4f4;
+    color: #000;
+}
+
+th.secondary:hover {
+    background-color: #d9d9d9;
+}
+
+th.danger {
+    cursor: pointer;
+    background-color: #dc3545;
+    color: #fff;
+}
+
+th.danger:hover {
+    background-color: #b30000;
+}
+
+th.warning {
+    cursor: pointer;
+    background-color: #ffc107;
+    color: #fff;
+}
+
+th.warning:hover {
+    background-color: #b38f00;
+}
+
+
+
+
+
+
+tr.selected {
+    background-color: #f0f8ff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.pagination button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    margin: 0 1rem;
+}
+
+.selectedCellule {
+    background-color: #f0f8ff;
+}
