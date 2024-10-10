@@ -9,6 +9,7 @@ import LoaderPage from './pages/loader/LoaderPage';
 import SelectPage from './pages/select/SelectPage';
 import TablePage from './pages/table/TablePage';
 import CardPage from './pages/card/CardPage';
+import BreadcrumbPage from './pages/breadcrumb/BreadcrumbPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/select" element={<SelectPage />} />
           <Route path="/table" element={<TablePage />} />
           <Route path='/card' element={<CardPage />} />
+          <Route path='/breadcrumb' element={<BreadcrumbPage />} />
         </Routes>
       </Router>
     </div>
