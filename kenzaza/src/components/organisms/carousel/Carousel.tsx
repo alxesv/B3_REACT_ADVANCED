@@ -102,6 +102,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides, autoplay = false, interval 
         {slides.map((_, index) => (
           <span
             key={index}
+            role='dot'
             className={`carousel-dot ${index === currentSlide ? 'active' : ''}`}
             onClick={() => setCurrentSlide(index)}
           />

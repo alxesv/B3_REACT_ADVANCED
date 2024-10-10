@@ -18,7 +18,7 @@ test('call handleChange when clicked', () => {
 });
 
 test('correct class is applied', () => {
-    render(<Toggle color="secondary" type="square"/>);
+    render(<Toggle color="secondary" type="square" defaultChecked={true}/>);
     const sliderElement = screen.getByRole('checkbox').nextElementSibling;
     expect(sliderElement).toHaveClass('slider square secondary');
 }
