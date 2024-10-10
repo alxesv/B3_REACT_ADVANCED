@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Breadcrumb, { BreadcrumbItem } from './components/organisms/breadcrumb/Breadcrumb';
+import Breadcrumb, { BreadcrumbItem } from './components/molecules/breadcrumb/Breadcrumb';
 import MainPage from './pages/MainPage';
 import CheckboxPage from './pages/checkbox/CheckboxPage';
 import ButtonPage from './pages/button/ButtonPage';
@@ -16,6 +16,7 @@ import CarouselPage from './pages/carousel/CarouselPage';
 import AlertPage from './pages/alert/AlertPage';
 import BreadcrumbPage from './pages/breadcrumb/BreadcrumbPage';
 import ModalPage from './pages/modal/ModalPage';
+import TabsPage from './pages/tabs/TabsPage';
 import AccordionPage from './pages/accordion/AccordionPage';
 
 const getBreadcrumbItems = (location: string): BreadcrumbItem[] => {
@@ -58,6 +59,7 @@ const Layout: React.FC = () => {
         <Route path="/alert" element={<AlertPage />} />
         <Route path="/breadcrumb" element={<BreadcrumbPage />} />
         <Route path="/modal" element={<ModalPage />} />
+        <Route path='/tabs' element={<TabsPage />} />
         <Route path="/accordion" element={<AccordionPage />} />
       </Routes>
     </div>

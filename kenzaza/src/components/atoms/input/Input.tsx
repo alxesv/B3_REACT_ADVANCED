@@ -19,15 +19,17 @@ type InputProps = {
 
 const Input: React.FC<InputProps> = ({
   type, height = 2, radius = 30, width = 18, label, placeholder,
-  onChange, value, disabled=false, padding=2, background='', color='dark-color', required=false
+  onChange, value, disabled = false, padding = 2, background = '', color = 'dark-color', required = false
 }) => {
   return (
     <div>
       {label && <label>{label}</label>}
       <input type={type} className={'input ' + background + ' ' + color} placeholder={placeholder}
         onChange={onChange} value={value} disabled={disabled}
-        style={{width: `${width}rem`, height: `${height}rem`, borderRadius: `${radius}px`,
-        padding: `${padding}rem`}} required={required} />
+        style={{
+          width: `${width}rem`, height: `${height}rem`, borderRadius: `${radius}px`,
+          padding: `${padding}rem`
+        }} required={required} />
     </div>
 
   );

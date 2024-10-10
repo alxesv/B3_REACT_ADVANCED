@@ -21,7 +21,7 @@ const columnsDemo: Column<DataDemo>[] = [
 ];
 
 test('renders table with columns and data', () => {
-    render(<Table columns={columnsDemo} data={dataDemo} type="primary" />);
+    render(<Table columns={columnsDemo} data={dataDemo} />);
     const table = screen.getByRole('table');
     expect(table).toBeInTheDocument();
     const columnHeaders = screen.getAllByRole('columnheader');
@@ -89,4 +89,46 @@ test('calls onSelectCellules callback when cell is selected', () => {
     const firstCell = screen.getByText('John Doe');
     fireEvent.click(firstCell);
     expect(mockSelectCellules).toHaveBeenCalledWith([{ key: 'name', index: 0, value: 'John Doe' }]);
+});
+
+test('returns correct sort direction for ascending', () => {
+    render(<Table columns={columnsDemo} data={dataDemo} type="primary" />);
+    const nameHeader = screen.getByText('Name');
+    fireEvent.click(nameHeader);
+    fireEvent.click(nameHeader);
+});
+
+test('handles pagination on Previous button click', () => {
+    render(<Table columns={columnsDemo} data={dataDemo} type="primary" pagination={true} pageSize={2} />);
+    expect(screen.getByText('John Doe')).toBeInTheDocument();
+    expect(screen.getByText('Jane Smith')).toBeInTheDocument();
+    
+    fireEvent.click(screen.getByText('Next'));
+    expect(screen.getByText('Mike Johnson')).toBeInTheDocument();
+    
+    // Go back to previous page
+    fireEvent.click(screen.getByText('Previous'));
+    expect(screen.getByText('John Doe')).toBeInTheDocument();
+    expect(screen.getByText('Jane Smith')).toBeInTheDocument();
+});
+
+test('returns 0 when sorting equal values', () => {
+    const equalData = [
+        { id: 1, name: 'John Doe', age: 30 },
+        { id: 2, name: 'Jane Smith', age: 30 }, // Equal age for testing return 0
+    ];
+    render(<Table columns={[{ key: 'age', label: 'Age' }]} data={equalData} type="primary" />);
+    const ageHeader = screen.getByText('Age');
+    fireEvent.click(ageHeader);
+});
+
+test('toggles sort direction when prev.direction is false', () => {
+    const { rerender } = render(<Table columns={columnsDemo} data={dataDemo} type="primary" />);
+    const ageHeader = screen.getByText('Age');
+    fireEvent.click(ageHeader);
+    rerender(<Table columns={columnsDemo} data={dataDemo} type="primary" />);
+    fireEvent.click(ageHeader);
+    expect(screen.getAllByRole('row')[1]).toHaveTextContent('Chris Black');
+    fireEvent.click(ageHeader);
+    expect(screen.getAllByRole('row')[1]).toHaveTextContent('Emily Green');
 });
