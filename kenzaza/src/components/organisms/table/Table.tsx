@@ -27,14 +27,13 @@ interface SelectedCellules {
 type TableType = 'primary' | 'secondary' | 'danger' | 'warning';
 
 
-const Tableau = <T extends object>({ type = 'primary', columns, data, pageSize = data.length, select = false, pagination = false, onSelectRow, onSelectCellules }: TableProps<T>) => {
+const Table = <T extends object>({ type = 'primary', columns, data, pageSize = data.length, select = false, pagination = false, onSelectRow, onSelectCellules }: TableProps<T>) => {
 
     const [sortConfig, setSortConfig] = useState<{ key: keyof T; direction: 'asc' | 'desc' } | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedRows, setSelectedRows] = useState<number[]>([]);
     const [selectedCellules, setSelectedCellules] = useState<SelectedCellules[]>([]);
 
-    // Sorting logic
     const sortedData = React.useMemo(() => {
         if (sortConfig) {
             return [...data].sort((a, b) => {
@@ -66,26 +65,20 @@ const Tableau = <T extends object>({ type = 'primary', columns, data, pageSize =
         });
     };
 
-    // Handle row selection
+    // handle row selection
     const handleRowSelection = (index: number) => {
-        // Calculate the absolute index based on the current page
         const absoluteIndex = (currentPage - 1) * pageSize + index;
-    
         setSelectedRows(prev => {
             const newSelectedRows = prev.includes(absoluteIndex)
-                ? prev.filter(rowIndex => rowIndex !== absoluteIndex)  // Deselect the row
-                : [...prev, absoluteIndex];  // Select the row
-            
-            
-            // If onSelect callback is provided, pass the selected data back to the parent component
+                ? prev.filter(rowIndex => rowIndex !== absoluteIndex)
+                : [...prev, absoluteIndex];
             if (onSelectRow) {
-                onSelectRow(newSelectedRows.map(rowIndex => data[rowIndex]));  // Use the full dataset
+                onSelectRow(newSelectedRows.map(rowIndex => data[rowIndex]));
             }
-    
             return newSelectedRows;
         });
     };
-    
+
     // Handle cellule selection
     const handleCelluleSelection = (key: string, index: number, value: string) => () => {
         setSelectedCellules(prev => {
@@ -95,7 +88,7 @@ const Tableau = <T extends object>({ type = 'primary', columns, data, pageSize =
             if (isAlreadySelected) {
                 newSelectedCellules = prev.filter(cellule => cellule.key !== key || cellule.index !== index || cellule.value !== value);
             } else {
-                newSelectedCellules = [...prev,  {key: key, index: index, value: value}];
+                newSelectedCellules = [...prev, { key: key, index: index, value: value }];
             }
             if (onSelectCellules) {
                 onSelectCellules(newSelectedCellules);
@@ -120,8 +113,7 @@ const Tableau = <T extends object>({ type = 'primary', columns, data, pageSize =
             <table className='table'>
                 <thead>
                     <tr>
-                        {select && <th className={type}>Select</th>} {/* Select column */}
-
+                        {select ? <th className={type}>Select</th> : null} {/* Select column */}
                         {/* column from props */}
                         {columns.map(column => (
                             <th className={type} key={column.key as string} onClick={() => handleSort(column.key)}>
@@ -129,16 +121,15 @@ const Tableau = <T extends object>({ type = 'primary', columns, data, pageSize =
                                 {sortConfig?.key === column.key ? (sortConfig.direction === 'asc' ? ' ▲' : ' ▼') : ''}
                             </th>
                         ))}
-
                     </tr>
                 </thead>
-                {paginatedData.map((row, index) => {
+                <tbody>
+                    {paginatedData.map((row, index) => {
                         const absoluteIndex = (currentPage - 1) * pageSize + index;
 
                         return (
                             <tr key={absoluteIndex} className={selectedRows.includes(absoluteIndex) ? 'selected' : ''}>
-
-                                {select && /* select checkbox */
+                                {select ? /* select checkbox */
                                     <td>
                                         <input
                                             type='checkbox'
@@ -146,16 +137,18 @@ const Tableau = <T extends object>({ type = 'primary', columns, data, pageSize =
                                             onChange={() => handleRowSelection(index)}
                                         />
                                     </td>
+                                    : null
                                 }
                                 {columns.map(column => (
-                                    <td className={isCelluleSelected(column.key.toString(), index, row[column.key] as string) ? 'selectedCellule' : ''} 
-                                    onClick={handleCelluleSelection(column.key.toString(), index, row[column.key] as string)} key={column.key as string}>
+                                    <td className={isCelluleSelected(column.key.toString(), index, row[column.key] as string) ? 'selectedCellule' : ''}
+                                        onClick={handleCelluleSelection(column.key.toString(), index, row[column.key] as string)} key={column.key as string}>
                                         {String(row[column.key])}
                                     </td>
                                 ))}
                             </tr>
                         );
                     })}
+                </tbody>
             </table>
 
             {/* Pagination */}
@@ -182,4 +175,4 @@ const Tableau = <T extends object>({ type = 'primary', columns, data, pageSize =
     );
 };
 
-export default Tableau;
+export default Table;

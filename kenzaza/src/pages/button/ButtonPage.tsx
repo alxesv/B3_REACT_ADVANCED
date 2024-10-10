@@ -3,7 +3,7 @@ import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { DataProp } from '../../interface/TableInterface';
-import Tableau from '../../components/atoms/table/Table'; 
+import Table from '../../components/organisms/table/Table';
 import { columnsProp } from '../../model/ColumnDemo';
 
 const ButtonPage: React.FC = () => {
@@ -24,7 +24,6 @@ const ButtonPage: React.FC = () => {
     `;
 
     const changeCopySuccess = () => {
-        console.log('Copied!');
         setCopySuccess('Copied!')
         setTimeout(() => setCopySuccess('Copy'), 3000);
     };
@@ -37,7 +36,7 @@ const ButtonPage: React.FC = () => {
         { prop: 'cssClass', options: 'a string', description: 'Optional custom CSS class.', default: 'undefined', type: 'string' },
         { prop: 'onClickCopy', options: 'Function', description: 'Callback when the button is clicked to copy text.', default: 'undefined', type: 'function' },
         { prop: 'textToCopy', options: 'a string', description: 'Text to copy to clipboard.', default: 'undefined', type: 'string' },
-      ];
+    ];
 
 
     return (
@@ -47,7 +46,7 @@ const ButtonPage: React.FC = () => {
 
             <h2>Props Overview</h2>
 
-            <Tableau
+            <Table
                 columns={columnsProp}
                 data={data}
                 type='secondary'
