@@ -10,6 +10,7 @@ import SelectPage from './pages/select/SelectPage';
 import TablePage from './pages/table/TablePage';
 import CardPage from './pages/card/CardPage';
 import AlertPage from './pages/alert/AlertPage';
+import BreadcrumbPage from './pages/breadcrumb/BreadcrumbPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/table" element={<TablePage />} />
           <Route path='/card' element={<CardPage />} />
           <Route path='/alert' element={<AlertPage />} />
+          <Route path='/breadcrumb' element={<BreadcrumbPage />} />
         </Routes>
       </Router>
     </div>
