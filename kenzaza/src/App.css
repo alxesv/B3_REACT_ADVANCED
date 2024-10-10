@@ -91,3 +91,9 @@
 .dark-color::placeholder {
   color: #343a40;
 }
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
