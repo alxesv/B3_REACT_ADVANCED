@@ -1,4 +1,3 @@
-import exp from 'constants';
 import './modal.css';
 import React, { useEffect, useRef, useState } from 'react';
 import Button from '../../atoms/button/Button';
