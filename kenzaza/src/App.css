@@ -67,15 +67,27 @@
 .primary-color {
   color: #d319d6;
 }
+.primary-color::placeholder {
+  color: #d319d6;
+}
 
 .secondary-color {
+  color: #6c757d;
+}
+.secondary-color::placeholder {
   color: #6c757d;
 }
 
 .danger-color {
   color: #dc3545;
 }
+.danger-color::placeholder {
+  color: #dc3545;
+}
 
 .dark-color {
+  color: #343a40;
+}
+.dark-color::placeholder {
   color: #343a40;
 }

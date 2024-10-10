@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Loader from '../../components/atoms/loader/Loader';
 import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism for syntax highlighting
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One Dark theme
 import { DataProp } from '../../interface/TableInterface';
 import { columnsProp } from '../../model/ColumnDemo';
 import Table from '../../components/organisms/table/Table';
+import Loader from '../../components/atoms/loader/loader';
 
 const LoaderPage: React.FC = () => {
 
@@ -56,8 +56,6 @@ const LoaderPage: React.FC = () => {
     { prop: 'height', options: 'a number', description: 'Defines the height of the progress bar.', default: '1', type: 'number' },
     { prop: 'colorType', options: 'primary | secondary | danger | warning', description: 'Defines the color of the progress bar.', default: 'primary', type: 'string' },
   ];
-
-
 
 
   return (

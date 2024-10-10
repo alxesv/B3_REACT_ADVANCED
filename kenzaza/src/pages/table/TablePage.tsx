@@ -15,10 +15,10 @@ const TablePage: React.FC = () => {
   const [selectedCellule, setSelectedCellule] = useState<any[]>([]);
 
   const codeString = `
-  
-          <Table columns={columnsDemo} data={dataDemo} select={true} 
+
+          <Table columns={columnsDemo} data={dataDemo} select={true}
             pagination={true} onSelect={handleSelect} pageSize={5} type='primary' onSelectCellules={handleSelectCellules} />
-            
+
           <Table columns={columnsDemo} data={selectedData} type='secondary' />
   `;
 
@@ -52,19 +52,16 @@ const TablePage: React.FC = () => {
 
 
   const changeCopySuccess = () => {
-    console.log('Copied!');
     setCopySuccess('Copied!')
     setTimeout(() => setCopySuccess('Copy'), 3000);
   };
 
 
   const handleSelect = (selectedRows: DataDemo[]) => {
-    console.log(selectedRows);
     setSelectedData(selectedRows);
   };
 
   const handleSelectCellules = (selectedCellules: any[]) => {
-    console.log(selectedCellules);
     setSelectedCellule(selectedCellules);
   }
   return (

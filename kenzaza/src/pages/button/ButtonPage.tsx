@@ -51,7 +51,7 @@ const ButtonPage: React.FC = () => {
                 data={data}
                 type='secondary'
             />
-
+            
             <h2>Usage Examples</h2>
             <div className='example-code-block'>
                 <div className='example-block'>
