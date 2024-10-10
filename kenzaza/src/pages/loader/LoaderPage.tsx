@@ -24,16 +24,16 @@ const LoaderPage: React.FC = () => {
  `;
 
   const codeString2 = `
-      <Loader type="progress" colorType= 'primary' width={progress} height={1} />
+      <Loader type="progress" colorType='primary' width={progress} height={1} />
       <input type="range" value={progress} onChange={(e) => setProgress(parseInt(e.target.value))} />
 
-      <Loader type="progress" colorType= 'secondary' width={progress} height={2} />
+      <Loader type="progress" colorType='secondary' width={progress} height={2} />
       <input type="range" value={progress} onChange={(e) => setProgress(parseInt(e.target.value))} />
 
-      <Loader type="progress" colorType= 'danger' width={progress} height={3} />
+      <Loader type="progress" colorType='danger' width={progress} height={3} />
       <input type="range" value={progress} onChange={(e) => setProgress(parseInt(e.target.value))} />
 
-      <Loader type="progress" colorType= 'warning' width={progress} height={4} />
+      <Loader type="progress" colorType='warning' width={progress} height={4} />
       <input type="range" value={progress} onChange={(e) => setProgress(parseInt(e.target.value))} />
   `;
 
