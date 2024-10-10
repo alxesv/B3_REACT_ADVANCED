@@ -3,7 +3,8 @@ import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { DataProp } from '../../interface/TableInterface';
-import Tableau from '../../components/atoms/table/Table'; import { columnsProp } from '../../model/ColumnDemo';
+import Tableau from '../../components/atoms/table/Table'; 
+import { columnsProp } from '../../model/ColumnDemo';
 
 const ButtonPage: React.FC = () => {
     const [copySuccess, setCopySuccess] = useState('Copy');
@@ -30,12 +31,12 @@ const ButtonPage: React.FC = () => {
 
 
     const data: DataProp[] = [
-        { prop: 'type', value: 'primary | secondary | danger | icon', description: 'Defines the style of the button.', default: 'primary' },
-        { prop: 'state', value: 'active | disabled | loading', description: 'Defines the state of the button.', default: 'active' },
-        { prop: 'onClick', value: '() => void', description: 'Callback when the button is clicked.', default: 'undefined' },
-        { prop: 'cssClass', value: 'string', description: 'Optional custom CSS class.', default: 'undefined' },
-        { prop: 'onClickCopy', value: '() => void', description: 'Callback when the button is clicked to copy text.', default: 'undefined' },
-        { prop: 'textToCopy', value: 'string', description: 'Text to copy to clipboard.', default: 'undefined' },
+        { prop: 'type', options: 'primary | secondary | danger | icon', description: 'Defines the style of the button.', default: 'primary', type: 'string' },
+        { prop: 'state', options: 'active | disabled | loading', description: 'Defines the state of the button.', default: 'active', type: 'string' },
+        { prop: 'onClick', options: 'Function', description: 'Callback when the button is clicked.', default: 'undefined', type: 'function' },
+        { prop: 'cssClass', options: 'a string', description: 'Optional custom CSS class.', default: 'undefined', type: 'string' },
+        { prop: 'onClickCopy', options: 'Function', description: 'Callback when the button is clicked to copy text.', default: 'undefined', type: 'function' },
+        { prop: 'textToCopy', options: 'a string', description: 'Text to copy to clipboard.', default: 'undefined', type: 'string' },
       ];
 
 

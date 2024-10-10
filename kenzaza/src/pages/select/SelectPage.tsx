@@ -4,9 +4,20 @@ import type { Option } from '../../components/atoms/select/Select';
 import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism for syntax highlighting
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One Dark theme
+import Tableau from '../../components/atoms/table/Table';
+import { DataProp } from '../../interface/TableInterface';
+import { columnsProp } from '../../model/ColumnDemo';
 
 const SelectPage: React.FC = () => {
   const [copySuccess, setCopySuccess] = useState('Copy');
+
+  const DataProp: DataProp[] = [
+    { prop: 'label', options: 'a string', description: 'Text to display above the select input.', default: 'cannot be empty', type: 'string' },
+    { prop: 'onChange', options: 'Function', description: 'Function to call when an option is selected.', default: 'undefined', type: 'function' },
+    { prop: 'multiple', options: 'true or false', description: 'Defines if multiple options can be selected using ctrl(win) or cmd(mac).', default: 'false', type: 'boolean' },
+    { prop: 'options', options: 'Option[]', description: 'Array of options to display in the dropdown (see options code).', default: 'cannot be empty', type: 'array' },
+    { prop: 'defaultValue', options: 'a string', description: 'Value of the default selected option.', default: 'undefined', type: 'string' },
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTimeout(() => alert("Option " + e.target.value +  " selected!"), 50);
@@ -81,54 +92,11 @@ const SelectPage: React.FC = () => {
           <h1>Select Component Documentation</h1>
           <p>The Select component can be used to create a dropdown input with a label and multiple options.</p>
           <h2>Props Overview</h2>
-          <table>
-              <thead>
-                  <tr>
-                      <th>Prop</th>
-                      <th>Type</th>
-                      <th>Options</th>
-                      <th>Description</th>
-                      <th>Default</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td><code>label</code></td>
-                      <td>string</td>
-                      <td>a string</td>
-                      <td>Text to display above the select input.</td>
-                      <td><code>cannot be empty</code></td>
-                  </tr>
-                  <tr>
-                      <td><code>onChange</code></td>
-                      <td>function</td>
-                      <td>Function</td>
-                      <td>Function to call when an option is selected.</td>
-                      <td><code>undefined</code></td>
-                  </tr>
-                  <tr>
-                      <td><code>multiple</code></td>
-                      <td>boolean</td>
-                      <td><code>true</code> or <code>false</code></td>
-                      <td>Defines if multiple options can be selected using ctrl(win) or cmd(mac).</td>
-                      <td><code>false</code></td>
-                  </tr>
-                  <tr>
-                    <td><code>options</code></td>
-                    <td>Option[]</td>
-                    <td>Array of Option objects</td>
-                    <td>Array of options to display in the dropdown (see options code).</td>
-                    <td><code>cannot be empty</code></td>
-                  </tr>
-                  <tr>
-                    <td><code>defaultValue</code></td>
-                    <td>string</td>
-                    <td>a string</td>
-                    <td>Value of the default selected option.</td>
-                    <td><code>undefined</code></td>
-                  </tr>
-              </tbody>
-          </table>
+            <Tableau
+                columns={columnsProp}
+                data={DataProp}
+                type='secondary'
+            />
 
           <h2>Usage Examples</h2>
           <div className='example-code-block'>
@@ -144,7 +112,7 @@ const SelectPage: React.FC = () => {
                       {codeString}
                   </SyntaxHighlighter>
               </div>
-              <span>Options code</span>
+              <p>Options code</p>
               <div className='example-code'>
                   <Button type="secondary" cssClass='copy-button' onClick={copyToClipboard}>{copySuccess}</Button>
                   <SyntaxHighlighter language="tsx" style={oneDark}>

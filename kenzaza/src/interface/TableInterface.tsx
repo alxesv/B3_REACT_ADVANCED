@@ -12,7 +12,8 @@ export interface Column<T> {
 
 export interface DataProp {
     prop: string;
-    value: string;
+    type: string
+    options: string;
     description: string;
     default: string;
 }

@@ -41,13 +41,13 @@ const TablePage: React.FC = () => {
 
 
   const dataProp: DataProp[] = [
-    { prop: 'type', value: 'primary | secondary | danger | warning', description: 'Defines the background color of table header', default: 'primary' },
-    { prop: 'columns', value: 'ColumnProps<T>[]', description: 'Defines the columns of the table', default: 'undefined' },
-    { prop: 'data', value: 'T[]', description: 'Defines the data of the table', default: 'undefined' },
-    { prop: 'pageSize', value: 'number', description: 'Defines the number of rows per page', default: 'data.length' },
-    { prop: 'select', value: 'boolean', description: 'Defines if the rows are selectable', default: 'false' },
-    { prop: 'pagination', value: 'boolean', description: 'Defines if the table is paginated', default: 'false' },
-    { prop: 'onSelectRow', value: '(selectedData: T[]) => void', description: 'Function to handle selection', default: 'undefined' },
+    { prop: 'type', options: 'primary | secondary | danger | warning', description: 'Defines the background color of table header', default: 'primary' , type: 'string'},
+    { prop: 'columns', options: 'ColumnProps<T>[]', description: 'Defines the columns of the table', default: 'cannot be empty', type: 'ColumnProps<T>[]' },
+    { prop: 'data', options: 'T[]', description: 'Defines the data of the table', default: 'cannot be empty', type: 'T[]' },
+    { prop: 'pageSize', options: 'true or false', description: 'Defines the number of rows per page', default: 'data.length', type: 'number' },
+    { prop: 'select', options: 'true or false', description: 'Defines if the rows are selectable', default: 'false', type: 'boolean' },
+    { prop: 'pagination', options: 'true or false', description: 'Defines if the table is paginated', default: 'false', type: 'boolean' },
+    { prop: 'onSelectRow', options: '(selectedData: T[]) => void', description: 'Function to handle selection', default: 'undefined', type: 'function' },
   ];
 
 
@@ -70,7 +70,7 @@ const TablePage: React.FC = () => {
   return (
     <div className='page-container'>
       <h1>Table Demo Page</h1>
-      <p>Demo for the Table component.</p>
+      <p>The Table component can be used to display data in a tabular format.</p>
 
       <Tableau
         columns={columnsProp}

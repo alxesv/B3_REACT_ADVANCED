@@ -45,17 +45,17 @@ const LoaderPage: React.FC = () => {
 };
 
   const data: DataProp[] = [
-    { prop: 'type', value: 'spinner | progress', description: 'Defines the type of loader.', default: 'spinner' },
-    { prop: 'radius', value: 'number', description: 'Defines the size of the spinner.', default: '10' },
-    { prop: 'colorType', value: 'primary | secondary | danger | warning', description: 'Defines the color of the spinner.', default: 'primary' },
-    { prop: 'radius', value: 'number', description: 'Defines the size of the spinner.', default: '10' },
+    { prop: 'type', options: 'spinner | progress', description: 'Defines the type of loader.', default: 'spinner', type: 'string' },
+    { prop: 'radius', options: 'a number', description: 'Defines the size of the spinner.', default: '10', type: 'number' },
+    { prop: 'colorType', options: 'primary | secondary | danger | warning', description: 'Defines the color of the spinner.', default: 'primary', type: 'string' },
+    { prop: 'radius', options: 'a number', description: 'Defines the size of the spinner.', default: '10', type: 'number' },
   ];
 
   const data2: DataProp[] = [
-    { prop: 'type', value: 'spinner | progress', description: 'Defines the type of loader.', default: 'spinner' },
-    { prop: 'width', value: 'number', description: 'Defines the width of the progress bar.', default: '10' },
-    { prop: 'height', value: 'number', description: 'Defines the height of the progress bar.', default: '1' },
-    { prop: 'colorType', value: 'primary | secondary | danger | warning', description: 'Defines the color of the progress bar.', default: 'primary' },
+    { prop: 'type', options: 'spinner | progress', description: 'Defines the type of loader.', default: 'spinner', type: 'string' },
+    { prop: 'width', options: 'a number', description: 'Defines the width of the progress bar.', default: '10', type: 'number' },
+    { prop: 'height', options: 'a number', description: 'Defines the height of the progress bar.', default: '1', type: 'number' },
+    { prop: 'colorType', options: 'primary | secondary | danger | warning', description: 'Defines the color of the progress bar.', default: 'primary', type: 'string' },
   ];
 
 
@@ -66,7 +66,6 @@ const LoaderPage: React.FC = () => {
       <h1>Loaders Component Documentation</h1>
           <p>The spinner component can be used to create a loader.</p>
           <h2>Props Overview</h2>
-          <h2>Usage Examples</h2>
 
 
           <Tableau
@@ -74,6 +73,8 @@ const LoaderPage: React.FC = () => {
                 data={data}
                 type='secondary'
             />
+            
+          <h2>Usage Examples</h2>
 
 
           <div className='example-code-block'>
@@ -90,14 +91,17 @@ const LoaderPage: React.FC = () => {
                   </SyntaxHighlighter>
               </div>
           </div>
-          <h2>Usage Examples</h2>
       <p>The progress bar coponent can be used to create a loader</p>
+            <h2>Props Overview</h2>
+
       <Tableau
           columns={columnsProp}
           data={data2}
           type='secondary'
       />
-      <h2>Props Overview</h2>
+
+                <h2>Usage Examples</h2>
+
           <div className='example-code-block'>
             <div className='example-block justify-around'>
             <Loader type="progress" colorType= 'primary' width={progress} height={1} />
