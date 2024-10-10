@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Loader from '../../components/atoms/Loader/loader';
+import Loader from '../../components/atoms/loader/Loader';
 import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism for syntax highlighting
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One Dark theme
