@@ -5,7 +5,7 @@ import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One
 import { DataProp } from '../../interface/TableInterface';
 import { columnsProp } from '../../model/ColumnDemo';
 import Table from '../../components/organisms/table/Table';
-import Loader from '../../components/atoms/loader/loader';
+import Loader from '../../components/atoms/loader/Loader';
 
 const LoaderPage: React.FC = () => {
 
