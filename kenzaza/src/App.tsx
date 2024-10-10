@@ -8,6 +8,7 @@ import RadioPage from './pages/radio/RadioPage';
 import LoaderPage from './pages/loader/LoaderPage';
 import SelectPage from './pages/select/SelectPage';
 import TablePage from './pages/table/TablePage';
+import InputPage from './pages/input/InputPage';
 import CardPage from './pages/card/CardPage';
 import BreadcrumbPage from './pages/breadcrumb/BreadcrumbPage';
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/radio" element={<RadioPage />} />
           <Route path="/select" element={<SelectPage />} />
           <Route path="/table" element={<TablePage />} />
+          <Route path="/input" element={<InputPage />} />
           <Route path='/card' element={<CardPage />} />
           <Route path='/breadcrumb' element={<BreadcrumbPage />} />
         </Routes>
