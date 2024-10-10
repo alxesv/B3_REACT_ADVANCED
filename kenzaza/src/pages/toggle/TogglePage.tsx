@@ -3,9 +3,26 @@ import Toggle from '../../components/atoms/toggle/Toggle';
 import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism for syntax highlighting
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One Dark theme
+import Tableau from '../../components/atoms/table/Table';
+import { DataProp } from '../../interface/TableInterface';
+import { columnsProp } from '../../model/ColumnDemo';
 
 const TogglePage: React.FC = () => {
   const [copySuccess, setCopySuccess] = useState('Copy');
+
+  const DataProp: DataProp[] = [
+    { prop: 'type', options: 'round | square', description: 'Defines the shape of the toggle switch.', default: 'round', type: 'string' },
+    { prop: 'color', options: 'primary | secondary | danger | dark', description: 'Defines the color of the toggle switch.', default: 'primary', type: 'string' },
+    { prop: 'defaultChecked', options: 'true or false', description: 'Defines if the toggle switch is checked by default.', default: 'false', type: 'boolean' },
+    { prop: 'onChange', options: 'Function', description: 'Function to call when the toggle switch is clicked.', default: 'undefined', type: 'function' },
+    { prop: 'value', options: 'a string', description: 'Value attribute of the toggle switch.', default: 'undefined', type: 'string' },
+    { prop: 'customClass', options: 'a string', description: 'Optional custom CSS class.', default: 'undefined', type: 'string' },
+    ];
+
+    
+
+
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTimeout(() => alert("Toggle clicked!"), 400);
@@ -30,61 +47,12 @@ const TogglePage: React.FC = () => {
           <h1>Toggle Component Documentation</h1>
           <p>The Toggle component can be used to create a toggle switch input.</p>
           <h2>Props Overview</h2>
-          <table>
-              <thead>
-                  <tr>
-                      <th>Prop</th>
-                      <th>Type</th>
-                      <th>Options</th>
-                      <th>Description</th>
-                      <th>Default</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td><code>type</code></td>
-                      <td>string</td>
-                      <td>round | square</td>
-                      <td>Defines the shape of the toggle switch.</td>
-                      <td><code>round</code></td>
-                  </tr>
-                  <tr>
-                        <td><code>color</code></td>
-                        <td>string</td>
-                        <td>primary | secondary | danger | dark</td>
-                        <td>Defines the color of the toggle switch.</td>
-                        <td><code>primary</code></td>
-                  </tr>
-                  <tr>
-                      <td><code>defaultChecked</code></td>
-                      <td>boolean</td>
-                      <td><code>true</code> or <code>false</code></td>
-                      <td>Defines if the toggle switch is checked by default.</td>
-                      <td><code>false</code></td>
-                  </tr>
-                  <tr>
-                      <td><code>onChange</code></td>
-                      <td>function</td>
-                      <td>Function</td>
-                      <td>Function to call when the toggle switch is clicked.</td>
-                      <td><code>undefined</code></td>
-                  </tr>
-                  <tr>
-                      <td><code>value</code></td>
-                      <td>string</td>
-                      <td>a string</td>
-                      <td>Value attribute of the toggle switch.</td>
-                      <td><code>undefined</code></td>
-                  </tr>
-                  <tr>
-                        <td><code>customClass</code></td>
-                        <td>string</td>
-                        <td>a string</td>
-                        <td>Optional custom CSS class.</td>
-                        <td><code>undefined</code></td>
-                  </tr>
-              </tbody>
-          </table>
+          
+            <Tableau
+                columns={columnsProp}
+                data={DataProp}
+                type='secondary'
+            />
 
           <h2>Usage Examples</h2>
           <div className='example-code-block'>

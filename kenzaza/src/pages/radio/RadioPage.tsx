@@ -3,10 +3,22 @@ import Radio from '../../components/atoms/radio/Radio';
 import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism for syntax highlighting
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // One Dark theme
+import Tableau from '../../components/atoms/table/Table';
+import { DataProp } from '../../interface/TableInterface';
+import { columnsProp } from '../../model/ColumnDemo';
 
 const TogglePage: React.FC = () => {
   const [copySuccess, setCopySuccess] = useState('Copy');
 
+
+  const DataProp: DataProp[] = [
+    { prop: 'label', options: 'a string', description: 'Defines the text to display next to the radio button.', default: 'cannot be empty', type: 'string' },
+    { prop: 'name', options: 'a string', description: 'Defines the name attribute of the radio button. Different radio buttons with the same name belong to the same group.', default: 'cannot be empty', type: 'string' },
+    { prop: 'color', options: 'primary | secondary | danger | dark', description: 'Defines the color of the radio button.', default: 'primary', type: 'string' },
+    { prop: 'defaultChecked', options: 'true or false', description: 'Defines if the radio button is checked by default.', default: 'false', type: 'boolean' },
+    { prop: 'onChange', options: 'Function', description: 'Function to call when the radio button is clicked.', default: 'undefined', type: 'function' },
+    { prop: 'value', options: 'a string', description: 'Value attribute of the radio button.', default: 'cannot be empty', type: 'string' },
+  ];
 
 
   const codeString = `
@@ -33,61 +45,11 @@ const TogglePage: React.FC = () => {
           <h1>Radio Component Documentation</h1>
           <p>The Radio component can be used to create a radio button input with a label.</p>
           <h2>Props Overview</h2>
-          <table>
-              <thead>
-                  <tr>
-                      <th>Prop</th>
-                      <th>Type</th>
-                      <th>Options</th>
-                      <th>Description</th>
-                      <th>Default</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td><code>label</code></td>
-                      <td>string</td>
-                      <td>a string</td>
-                      <td>Defines the text to display next to the radio button.</td>
-                      <td><code>cannot be empty</code></td>
-                  </tr>
-                  <tr>
-                        <td><code>name</code></td>
-                        <td>string</td>
-                        <td>a string</td>
-                        <td>Defines the name attribute of the radio button. Different radio buttons with the same name belong to the same group.</td>
-                        <td><code>cannot be empty</code></td>
-                  </tr>
-                  <tr>
-                        <td><code>color</code></td>
-                        <td>string</td>
-                        <td>primary | secondary | danger | dark</td>
-                        <td>Defines the color of the radio button.</td>
-                        <td><code>primary</code></td>
-                  </tr>
-                  <tr>
-                      <td><code>defaultChecked</code></td>
-                      <td>boolean</td>
-                      <td><code>true</code> or <code>false</code></td>
-                      <td>Defines if the radio button is checked by default.</td>
-                      <td><code>false</code></td>
-                  </tr>
-                  <tr>
-                      <td><code>onChange</code></td>
-                      <td>function</td>
-                      <td>Function</td>
-                      <td>Function to call when the radio button is clicked.</td>
-                      <td><code>undefined</code></td>
-                  </tr>
-                  <tr>
-                      <td><code>value</code></td>
-                      <td>string</td>
-                      <td>a string</td>
-                      <td>Value attribute of the radio button.</td>
-                      <td><code>cannot be empty</code></td>
-                  </tr>
-              </tbody>
-          </table>
+            <Tableau
+                columns={columnsProp}
+                data={DataProp}
+                type='secondary'
+            />
 
           <h2>Usage Examples</h2>
           <div className='example-code-block'>
