@@ -14,6 +14,7 @@ import CarouselPage from './pages/carousel/CarouselPage';
 import AlertPage from './pages/alert/AlertPage';
 import BreadcrumbPage from './pages/breadcrumb/BreadcrumbPage';
 import ModalPage from './pages/modal/ModalPage';
+import TabsPage from './pages/tabs/TabsPage';
 import AccordionPage from './pages/accordion/AccordionPage';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path='/alert' element={<AlertPage />} />
           <Route path='/breadcrumb' element={<BreadcrumbPage />} />
           <Route path='/modal' element={<ModalPage />} />
+          <Route path='/tabs' element={<TabsPage />} />
           <Route path='/accordion' element={<AccordionPage />} />
         </Routes>
       </Router>
