@@ -10,13 +10,20 @@ const renderWithRouter = (ui: React.ReactElement) => {
 
 describe('Breadcrumb Component', () => {
   const items = [
-    { label: 'Home', path: '/' },
-    { label: 'Products', path: '/products' },
+    { label: 'Home', path: '/', color: 'primary' as 'primary' },
+    { label: 'Products', path: '/products', color: 'primary' as 'primary' },
     { label: 'Electronics', path: '/products/electronics' },
-    { label: 'Smartphones', path: '/products/electronics/smartphones' }
+    { label: 'Smartphones', path: '/products/electronics/smartphones', color: 'primary' as 'primary' }
+  ];
+
+  const items2 = [
+    { label: 'Home', path: '/', color: 'primary' as 'primary' },
+    { label: 'Products', path: '/products', color: 'primary' as 'primary' },
+    { label: 'Electronics', path: '/products/electronics' },
+    { label: 'Smartphones', path: '/products/electronics/smartphones'}
   ];
   test('renders breadcrumb items', () => {
-    renderWithRouter(<Breadcrumb items={items} />);
+    renderWithRouter(<Breadcrumb items={items2} />);
     items.forEach(item => {
       expect(screen.getByText(item.label)).toBeInTheDocument();
     });

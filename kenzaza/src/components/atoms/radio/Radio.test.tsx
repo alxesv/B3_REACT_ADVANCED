@@ -11,7 +11,7 @@ test('renders radio', () => {
 
 test('call handleChange when clicked', () => {
     const handleChange = jest.fn();
-    render(<Radio label="Radio" name="radio" value="radio" onChange={handleChange} />);
+    render(<Radio label="Radio" name="radio" value="radio" onChange={handleChange} color="secondary" />);
     const radioElement = screen.getByRole('radio');
     userEvent.click(radioElement);
     expect(handleChange).toHaveBeenCalled();
@@ -30,5 +30,10 @@ test('radios checks and unchecks', () => {
     userEvent.click(radioElement[1]);
     expect(radioElement[0]).not.toBeChecked();
     expect(radioElement[1]).toBeChecked();
-}
-)
+});
+
+test('radio is defaultChecked', () => {
+    render(<Radio label="Radio" name="radio" value="radio" defaultChecked={true} />);
+    const radioElement = screen.getByRole('radio');
+    expect(radioElement).toBeChecked();
+});

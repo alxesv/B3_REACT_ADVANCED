@@ -3,7 +3,7 @@ import './table.css';
 
 
 interface TableProps<T> {
-    type: TableType;
+    type?: TableType;
     columns: ColumnProps<T>[];
     data: T[];
     pageSize?: number;
