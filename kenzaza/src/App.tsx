@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ButtonPage from './pages/button/ButtonPage';
 import TogglePage from './pages/toggle/TogglePage';
 import RadioPage from './pages/radio/RadioPage';
+import LoaderPage from './pages/loader/LoaderPage';
 import SelectPage from './pages/select/SelectPage';
 import TablePage from './pages/table/TablePage';
 
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/loader" element={<LoaderPage />} />
           <Route path="/checkbox" element={<CheckboxPage />} />
           <Route path="/button" element={<ButtonPage />} />
           <Route path="/toggle" element={<TogglePage />} />
