@@ -48,7 +48,7 @@ function Alert({ type='primary', message, autoClose = false, onClose }: AlertPro
     return (
         <div className={`alert ${type}-bg`} ref={alertRef}>
             {message}
-            {autoClose ? <div className='progress-bar' data-testid="progress-bar" style={{ width: `${progress}%` }}></div> : null}
+            {autoClose ? <div className='alert-progress-bar' data-testid="progress-bar" style={{ width: `${progress}%` }}></div> : null}
             <button className='close-button' onClick={handleClose}>X</button>
         </div>
     );
