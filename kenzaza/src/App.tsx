@@ -12,6 +12,7 @@ import InputPage from './pages/input/InputPage';
 import CardPage from './pages/card/CardPage';
 import AlertPage from './pages/alert/AlertPage';
 import BreadcrumbPage from './pages/breadcrumb/BreadcrumbPage';
+import ModalPage from './pages/modal/ModalPage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path='/card' element={<CardPage />} />
           <Route path='/alert' element={<AlertPage />} />
           <Route path='/breadcrumb' element={<BreadcrumbPage />} />
+          <Route path='/modal' element={<ModalPage />} />
         </Routes>
       </Router>
     </div>
