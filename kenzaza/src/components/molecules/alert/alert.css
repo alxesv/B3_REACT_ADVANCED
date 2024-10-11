@@ -24,7 +24,7 @@
     -moz-appearance: none;
     appearance: none;
     color: #ffffffbd;
-    font-weight: 700;
+    font-weight: lighter;
 }
 
 .alert .close-button:hover {

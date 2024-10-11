@@ -74,7 +74,7 @@ function MainPage() {
 
     { title:'ALERT',
       description:'An alert is a message box that appears on the screen to provide important information or notifications to the user. It requires acknowledgment before the user can proceed.',
-      imageUrl:'/screenshots/LOADER.png',
+      imageUrl:'/screenshots/ALERT.png',
       actions: [
         <Button type="secondary" state="active" onClick={() => handleClick('/alert')}>Click</Button>
       ]
@@ -100,37 +100,37 @@ function MainPage() {
   const cards3 = [
 
 
-    { title:'ACCORDEON',
+    { title:'ACCORDION',
       description:'An accordion is a UI component that expands and collapses sections of content, allowing users to view or hide information in a compact space.',
-      imageUrl:'/screenshots/LOADER.png',
+      imageUrl:'/screenshots/ACCORDION.png',
       actions: [
-        <Button type="secondary" state="active" onClick={() => handleClick('/accordeon')}>Click</Button>
+        <Button type="secondary" state="active" onClick={() => handleClick('/accordion')}>Click</Button>
       ]
       },
       { title:'CAROUSEL',
         description:'A carousel is a rotating display of images or content items that allows users to cycle through a set of items, typically with navigation controls like arrows or dots.',
-        imageUrl:'/screenshots/LOADER.png',
+        imageUrl:'/screenshots/CAROUSEL.png',
         actions: [
           <Button type="secondary" state="active" onClick={() => handleClick('/carousel')}>Click</Button>
         ]
         },
         { title:'MODAL',
           description:'A modal is a dialog box that appears on top of the main content, requiring user interaction before returning to the underlying page, often used for notifications, confirmations, or forms.',
-          imageUrl:'/screenshots/LOADER.png',
+          imageUrl:'/screenshots/MODAL.png',
           actions: [
             <Button type="secondary" state="active" onClick={() => handleClick('/modal')}>Click</Button>
           ]
           },
           { title:'TABS',
             description:'Tabs are UI elements that allow users to switch between different sections of content within the same interface, providing a way to organize and access related information easily.',
-            imageUrl:'/screenshots/LOADER.png',
+            imageUrl:'/screenshots/TABS.png',
             actions: [
               <Button type="secondary" state="active" onClick={() => handleClick('/tabs')}>Click</Button>
             ]
             },
             { title:'TABLE',
               description:'A table is a structured arrangement of data organized in rows and columns, making it easy to read, compare, and analyze information.',
-              imageUrl:'/screenshots/LOADER.png',
+              imageUrl:'/screenshots/TABLE.png',
               actions: [
                 <Button type="secondary" state="active" onClick={() => handleClick('/table')}>Click</Button>
               ]
