@@ -1,0 +1,84 @@
+
+.kenzaza {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: lighter;
+  font-size: 5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.atomic-design {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: lighter;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.title-design {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: lighter;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.box-container {
+  /* Gestion de la box */
+  width: auto;
+    height: auto;
+    background-color: #f5f5f5;
+    margin: 20px 15rem;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+
+    /* Gestion de la position des cards */
+
+
+
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
+    gap: px;
+    align-content: space-evenly;
+    justify-content: center;
+    align-items: stretch;
+    justify-items: center;
+}
+
+
+.card-image img {
+  width: 20rem;
+  height: 15rem;
+  object-fit: contain;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 4%);
+  border-radius: 10px;
+  background-color: white;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+
+  padding: 1rem;
+  width: 20rem;
+
+}
+
+.row-card {
+  margin: 2rem;
+}
