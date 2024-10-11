@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Breadcrumb from '../../components/organisms/breadcrumb/Breadcrumb';
+import Breadcrumb from '../../components/molecules/breadcrumb/Breadcrumb';
 import Table from '../../components/organisms/table/Table';
 import Button from '../../components/atoms/button/Button';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
