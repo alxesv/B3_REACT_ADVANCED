@@ -11,7 +11,7 @@ test('renders alert', () => {
 
 test('closes alert when close button is clicked', () => {
     const onClose = jest.fn();
-    render(<Alert message="Alert message" onClose={onClose} />);
+    render(<Alert message="Alert message" onClose={onClose} type='secondary'/>);
     const closeButton = screen.getByText(/X/i);
     userEvent.click(closeButton);
     expect(onClose).toHaveBeenCalled();
