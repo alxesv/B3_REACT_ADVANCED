@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/atoms/button/Button';
 import Card from '../components/molecules/card/Card';
 import { useNavigate } from 'react-router-dom';
-import './Mainpage.css';
+import './mainpage.css';
 
 function MainPage() {
 
@@ -140,13 +140,13 @@ function MainPage() {
   return (
     // add a background image to this div : style={{backgroundImage: `url(${background})`}}
     <div className='mainpage'>
-      <h1 className='kenzaza'>KENZAZA LIBRAIRY</h1>
+      <h1 className='kenzaza'>KENZAZA LIBRARY</h1>
       <h2 className='atomic-design'>ATOMS</h2>
 
       <div className='box-container'>
         {cards.map((card, index) => (
           <div className='row-card'>
-            <Card key={index} {...card} fontWeight='lighter'/>
+            <Card key={index} {...card} fontWeight='lighter' width='16' />
           </div>
        ))}
       </div>
@@ -157,7 +157,7 @@ function MainPage() {
       <div className='box-container'>
       {cards2.map((card, index) => (
          <div className='row-card'>
-         <Card key={index} {...card} />
+         <Card key={index} {...card} width='16' />
        </div>
       ))}
       </div>
@@ -167,7 +167,7 @@ function MainPage() {
       <div className='box-container'>
       {cards3.map((card, index) => (
          <div className='row-card'>
-         <Card key={index} {...card} />
+         <Card key={index} {...card} width='16' />
        </div>
       ))}
       </div>
