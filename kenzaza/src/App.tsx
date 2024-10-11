@@ -1,6 +1,4 @@
-import './App.css';
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import Breadcrumb, { BreadcrumbItem } from './components/molecules/breadcrumb/Breadcrumb';
 import MainPage from './pages/MainPage';
 import CheckboxPage from './pages/checkbox/CheckboxPage';
@@ -18,6 +16,8 @@ import BreadcrumbPage from './pages/breadcrumb/BreadcrumbPage';
 import ModalPage from './pages/modal/ModalPage';
 import TabsPage from './pages/tabs/TabsPage';
 import AccordionPage from './pages/accordion/AccordionPage';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 const getBreadcrumbItems = (location: string): BreadcrumbItem[] => {
   const pathnames = location.split('/').filter((x) => x);
@@ -38,6 +38,10 @@ const getBreadcrumbItems = (location: string): BreadcrumbItem[] => {
 const Layout: React.FC = () => {
   const location = useLocation();
   const breadcrumbItems = getBreadcrumbItems(location.pathname);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div className="App">
@@ -69,7 +73,7 @@ const Layout: React.FC = () => {
 function App() {
   return (
     <Router>
-      <Layout /> 
+      <Layout />
     </Router>
   );
 }
