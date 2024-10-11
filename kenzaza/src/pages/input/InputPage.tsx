@@ -50,14 +50,14 @@ const InputPage: React.FC = () => {
         <h1>Input Component Documentation</h1>
         <p>The Input component can be used to create an input field with a label.</p>
         <h2>Props Overview</h2>
-        <h2>Usage Examples</h2>
 
         <Table
         columns={columnsProp}
         data={data}
         type='secondary'
         />
-
+        
+        <h2>Usage Examples</h2>
 
         <div className='example-code-block'>
           <div className='example-block justify-around'>
