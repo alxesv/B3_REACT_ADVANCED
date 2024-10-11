@@ -19,8 +19,8 @@ import ModalPage from './pages/modal/ModalPage';
 import AccordionPage from './pages/accordion/AccordionPage';
 
 const getBreadcrumbItems = (location: string): BreadcrumbItem[] => {
-  const pathnames = location.split('/').filter((x) => x); // Remove empty segments
-  const breadcrumbItems: BreadcrumbItem[] = [{ label: 'Home', path: '/', color: 'primary' }]; // Explicit typing
+  const pathnames = location.split('/').filter((x) => x);
+  const breadcrumbItems: BreadcrumbItem[] = [{ label: 'Home', path: '/', color: 'primary' }];
 
   pathnames.forEach((path, index) => {
     const routePath = `/${pathnames.slice(0, index + 1).join('/')}`;
