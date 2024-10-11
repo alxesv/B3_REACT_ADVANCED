@@ -145,8 +145,8 @@ function MainPage() {
 
       <div className='box-container'>
         {cards.map((card, index) => (
-          <div className='row-card'>
-            <Card key={index} {...card} fontWeight='lighter' width='16' />
+          <div className='row-card' key={index}>
+            <Card {...card} fontWeight='lighter' width='16' />
           </div>
        ))}
       </div>
@@ -156,8 +156,8 @@ function MainPage() {
 
       <div className='box-container'>
       {cards2.map((card, index) => (
-         <div className='row-card'>
-         <Card key={index} {...card} width='16' />
+         <div className='row-card' key={index}>
+         <Card {...card} width='16' />
        </div>
       ))}
       </div>
@@ -166,8 +166,8 @@ function MainPage() {
 
       <div className='box-container'>
       {cards3.map((card, index) => (
-         <div className='row-card'>
-         <Card key={index} {...card} width='16' />
+         <div className='row-card' key={index}>
+         <Card {...card} width='16' />
        </div>
       ))}
       </div>
