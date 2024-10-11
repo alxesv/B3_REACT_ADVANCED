@@ -43,7 +43,7 @@ test('renders card with actions when actions are provided', () => {
 });
 
 test('renders card with correct width', () => {
-  render(<Card title="Card Width Test" description="This card has a custom width" width="25" />);
+  render(<Card title="Card Width Test" description="This card has a custom width" width="25" fontWeight="test" />);
 
   // Check that the card has the correct inline style for width
   const card = screen.getByText('Card Width Test').closest('.card');
